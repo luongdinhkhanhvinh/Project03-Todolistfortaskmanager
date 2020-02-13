@@ -7,7 +7,8 @@ class App extends React.Component {
   constructor(props){
     super(props);
     this.state={
-      task:[]
+      task:[],
+      isDisplayForm:true
     }
   }
   componentWillMount(){
@@ -41,6 +42,16 @@ class App extends React.Component {
     });
     localStorage.setItem('task',JSON.stringify(task))
   }
+  onToggleForm=()=> {
+    this.setState({
+        isDisplayForm: !this.state.isDisplayForm
+    });
+  }
+  onCloseForm=()=>{
+    this.setState({
+      isDisplayForm: false
+  });
+  }
   s4(){
     return Math.floor((1+Math.random()) *0x10000).toString(16).substring(1);
   }
@@ -48,7 +59,8 @@ class App extends React.Component {
     return this.s4()+this.s4()+'-'+this.s4()+'-'+this.s4()+'-'+this.s4()+'-'+this.s4()+'-'+this.s4()+'-'+this.s4();
   }
   render(){
-    var {task}=this.state;
+    var {task,isDisplayForm}=this.state;
+    var elmTaskForm= isDisplayForm ? <TaskForm onCloseForm={this.onCloseForm}/> :''
     return (
       <div className="container">
         <div className="text-center">
@@ -56,12 +68,16 @@ class App extends React.Component {
             <hr/>
         </div>
         <div className="row">
-            <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <div className={isDisplayForm ? 'col-xs-4 col-sm-4 col-md-4 col-lg-4':''}>
               {/* Form */}
-                <TaskForm/>
+                {elmTaskForm}
             </div>
-            <div className="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                <button type="button" className="btn btn-primary">
+            <div className={isDisplayForm ? 'col-xs-8 col-sm-8 col-md-8 col-lg-8' : 'col-xs-12 col-sm-12 col-md-12 col-lg-12'}>
+                <button 
+                type="button" 
+                className="btn btn-primary"
+                onClick={this.onToggleForm}
+                >
                     <span className="fa fa-plus mr-5"></span>Add Work
                 </button>
                 <button 
