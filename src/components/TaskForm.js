@@ -64,7 +64,7 @@ class TaskForm extends Component {
             <div className="panel panel-warning">
                 <div className="panel-heading">
                     <h3 className="panel-title">
-                        { !this.state.id ? 'Thêm Công Việc' : 'Cập Nhật Công Việc' }
+                        { !this.state.id ? 'Add Work' : 'Update Work' }
                         <span
                             className="fa fa-times-circle text-right"
                             onClick={this.onExitForm}
@@ -74,7 +74,7 @@ class TaskForm extends Component {
                 <div className="panel-body">
                     <form onSubmit={this.onHandleSubmit} >
                         <div className="form-group">
-                            <label>Tên :</label>
+                            <label>Name :</label>
                             <input
                                 type="text"
                                 className="form-control"
@@ -83,22 +83,22 @@ class TaskForm extends Component {
                                 onChange={ this.onHandleChange }
                             />
                         </div>
-                        <label>Trạng Thái :</label>
+                        <label>Status :</label>
                         <select
                             className="form-control"
                             value={this.state.status}
                             onChange={this.onHandleChange}
                             name="status"
                         >
-                            <option value={true}>Kích Hoạt</option>
-                            <option value={false}>Ẩn</option>
+                            <option value={true}>Enable</option>
+                            <option value={false}>Hide</option>
                         </select><br/>
                         <div className="text-center">
                             <button type="submit" className="btn btn-warning">
-                                <span className="fa fa-plus mr-5"></span>Lưu Lại
+                                <span className="fa fa-plus mr-5"></span>Save
                             </button>&nbsp;
                             <button type="button" onClick={ this.onClear } className="btn btn-danger">
-                                <span className="fa fa-close mr-5"></span>Hủy Bỏ
+                                <span className="fa fa-close mr-5"></span>Cancel
                             </button>
                         </div>
                     </form>

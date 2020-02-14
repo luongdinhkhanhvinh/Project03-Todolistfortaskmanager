@@ -28,12 +28,12 @@ class TaskSearchControl extends Component {
                         value={this.state.keyword}
                         type="text"
                         className="form-control"
-                        placeholder="Nhập từ khóa..."
+                        placeholder="Enter values ​​here..."
                         onChange={this.onHandleChange}
                     />
                     <span className="input-group-btn">
                         <button className="btn btn-primary" type="button" onClick={this.onSearch}>
-                            <span className="fa fa-search mr-5"></span>Tìm
+                            <span className="fa fa-search mr-5"></span>Search
                         </button>
                     </span>
                 </div>

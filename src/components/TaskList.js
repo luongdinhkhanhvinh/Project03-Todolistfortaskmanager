@@ -41,10 +41,10 @@ class TaskList extends Component {
                     <table className="table table-bordered table-hover">
                         <thead>
                             <tr>
-                                <th className="text-center">STT</th>
-                                <th className="text-center">Tên</th>
-                                <th className="text-center">Trạng Thái</th>
-                                <th className="text-center">Hành Động</th>
+                                <th className="text-center">ID</th>
+                                <th className="text-center">NAME</th>
+                                <th className="text-center">STATUS</th>
+                                <th className="text-center">ACTION</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -66,9 +66,9 @@ class TaskList extends Component {
                                         onChange={ this.onChange }
                                         value={ this.state.filerName }
                                     >
-                                        <option value={-1}>Tất Cả</option>
-                                        <option value={0}>Ẩn</option>
-                                        <option value={1}>Kích Hoạt</option>
+                                        <option value={-1}>All</option>
+                                        <option value={0}>Hide</option>
+                                        <option value={1}>Enable</option>
                                     </select>
                                 </td>
                                 <td></td>

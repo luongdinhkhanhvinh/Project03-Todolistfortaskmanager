@@ -18,7 +18,7 @@ class TaskSortControl extends Component {
                         aria-haspopup="true"
                         aria-expanded="true"
                     >
-                        Sắp Xếp <span className="fa fa-caret-square-o-down ml-5"></span>
+                        Sort <span className="fa fa-caret-square-o-down ml-5"></span>
                     </button>
                     <ul className="dropdown-menu" aria-labelledby="dropdownMenu1">
                         <li onClick={ () => this.onClick('name', 1) }>
@@ -27,7 +27,7 @@ class TaskSortControl extends Component {
                                 className={(this.props.sortBy === 'name' && this.props.sortValue === 1) ? 'sort_selected' : ''}
                             >
                                 <span className="fa fa-sort-alpha-asc pr-5">
-                                    Tên A-Z
+                                    Name A-Z
                                 </span>
                             </a>
                         </li>
@@ -37,7 +37,7 @@ class TaskSortControl extends Component {
                                 className={(this.props.sortBy === 'name' && this.props.sortValue === -1) ? 'sort_selected' : ''}
                             >
                                 <span className="fa fa-sort-alpha-desc pr-5">
-                                    Tên Z-A
+                                    Name Z-A
                                 </span>
                             </a>
                         </li>
@@ -47,7 +47,7 @@ class TaskSortControl extends Component {
                                 role="button"
                                 className={(this.props.sortBy === 'status' && this.props.sortValue === 1) ? 'sort_selected' : ''}
                             >
-                                Trạng Thái Kích Hoạt
+                                Status Enable
                             </a>
                         </li>
                         <li onClick={ () => this.onClick('status', -1) }>
@@ -55,7 +55,7 @@ class TaskSortControl extends Component {
                                 role="button"
                                 className={(this.props.sortBy === 'status' && this.props.sortValue === -1) ? 'sort_selected' : ''}
                             >
-                                Trạng Thái Ẩn
+                                Status Hide
                             </a>
                         </li>
                     </ul>

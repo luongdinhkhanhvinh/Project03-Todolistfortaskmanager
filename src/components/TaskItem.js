@@ -7,7 +7,7 @@ class TaskItem extends Component {
             <span
                 className={ this.props.task.status ? 'label label-danger' : 'label label-info' }
                 onClick={ this.onUpdateStatus }
-            >{ this.props.task.status === true ? 'Kích Hoạt' : 'Ẩn' }</span>
+            >{ this.props.task.status === true ? 'Enable' : 'Hide' }</span>
         );
     }
 
@@ -33,11 +33,11 @@ class TaskItem extends Component {
                 </td>
                 <td className="text-center">
                     <button type="button" className="btn btn-warning" onClick={ this.onSelectedItem }>
-                        <span className="fa fa-pencil mr-5"></span>Sửa
+                        <span className="fa fa-pencil mr-5"></span>Edit
                     </button>
                     &nbsp;
                     <button type="button" className="btn btn-danger" onClick={ this.onDeleteItem }>
-                        <span className="fa fa-trash mr-5"></span>Xóa
+                        <span className="fa fa-trash mr-5"></span>Delete
                     </button>
                 </td>
             </tr>
